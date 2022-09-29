@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF56F63028E64AA7003F2DDB /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56F62F28E64AA7003F2DDB /* Factories.swift */; };
 		FF70C98528E6059300B776D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70C98428E6059300B776D5 /* AppDelegate.swift */; };
 		FF70C98728E6059300B776D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70C98628E6059300B776D5 /* SceneDelegate.swift */; };
 		FF70C98E28E6059400B776D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF70C98D28E6059400B776D5 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF56F62F28E64AA7003F2DDB /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		FF70C98128E6059300B776D5 /* Starbucks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starbucks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF70C98428E6059300B776D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF70C98628E6059300B776D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				FF70C99828E6067C00B776D5 /* HomeViewController.swift */,
-				FF70C98428E6059300B776D5 /* AppDelegate.swift */,
 				FF70C98628E6059300B776D5 /* SceneDelegate.swift */,
+				FF70C98428E6059300B776D5 /* AppDelegate.swift */,
 				FF70C98D28E6059400B776D5 /* Assets.xcassets */,
 				FF70C98F28E6059400B776D5 /* LaunchScreen.storyboard */,
 				FF70C99228E6059400B776D5 /* Info.plist */,
+				FF56F62F28E64AA7003F2DDB /* Factories.swift */,
 			);
 			path = Starbucks;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			files = (
 				FF70C98528E6059300B776D5 /* AppDelegate.swift in Sources */,
 				FF70C98728E6059300B776D5 /* SceneDelegate.swift in Sources */,
+				FF56F63028E64AA7003F2DDB /* Factories.swift in Sources */,
 				FF70C99928E6067C00B776D5 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

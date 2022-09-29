@@ -91,19 +91,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.backgroundColor = .systemBackground
         
-        // Instantiate 
+        // Instantiate view controllers
         let homeVC = HomeViewController()
         let scanVC = ScanViewController()
         let orderVC = OrderViewController()
         let giftVC = GiftViewController()
         let storeVC = StoreViewController()
         
+        // Embedding view controllers into navigation controllers
+        let homeNC = UINavigationController(rootViewController: homeVC)
+        let scanNC = UINavigationController(rootViewController: scanVC)
+        let orderNC = UINavigationController(rootViewController: orderVC)
+        let giftNC = UINavigationController(rootViewController: giftVC)
+        let storeNC = UINavigationController(rootViewController: storeVC)
+                
         let tabBarController = UITabBarController()
         tabBarController.tabBar.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.2)
-        tabBarController.viewControllers = [homeVC, scanVC, orderVC, giftVC, storeVC]
-        
+        tabBarController.viewControllers = [homeNC, scanNC, orderNC, giftNC, storeNC]
+
         window?.rootViewController = tabBarController
-        
         
     }
 
