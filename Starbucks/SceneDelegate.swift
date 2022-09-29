@@ -104,6 +104,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.rootViewController = tabBarController
         
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
