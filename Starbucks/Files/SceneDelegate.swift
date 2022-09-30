@@ -7,78 +7,6 @@
 
 import UIKit
 
-class StarBucksViewController: UIViewController {
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nil, bundle: nil)
-        commonInit()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func commonInit() {
-        
-    }
-    
-    // Sets the image and title of an item on the tab bar
-    func setTabBarImage(imageName: String, title: String) {
-        let configuration = UIImage.SymbolConfiguration(scale: .large)
-        let image = UIImage(systemName: imageName, withConfiguration: configuration)
-        tabBarItem = UITabBarItem(title: title, image: image, tag: 0)
-    }
-    
-}
-
-// ScanViewController class to display the 'Home' item on the tab bar
-class ScanViewController: StarBucksViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemIndigo
-        title = "Scan"
-    }
-    
-    override func commonInit() {
-        setTabBarImage(imageName: "qrcode", title: "Scan")
-    }
-}
-
-// OrderViewController class to display the 'Order' item on the tab bar
-class OrderViewController: StarBucksViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemOrange
-        title = "Order"
-    }
-
-    override func commonInit() {
-        setTabBarImage(imageName: "arrow.up.bin.fill", title: "Order")
-    }
-}
-
-// GiftViewController class to display the 'Gift' item on the tab bar
-class GiftViewController: StarBucksViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemGreen
-        title = "Gift"
-    }
-    
-    override func commonInit() {
-        setTabBarImage(imageName: "gift.fill", title: "Gift")
-    }
-}
-
-// StoreViewController class to display the 'Stores' item on the tab bar
-class StoreViewController: StarBucksViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemTeal
-        title = "Stores"
-    }
-    
-    override func commonInit() {
-        setTabBarImage(imageName: "location.fill", title: "Stores")
-    }
-
-}
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -99,7 +27,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let storeVC = StoreViewController()
         
         // Embedding view controllers into navigation controllers
-        let homeNC = UINavigationController(rootViewController: homeVC)
         let scanNC = UINavigationController(rootViewController: scanVC)
         let orderNC = UINavigationController(rootViewController: orderVC)
         let giftNC = UINavigationController(rootViewController: giftVC)
@@ -107,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 
         let tabBarController = UITabBarController()
         tabBarController.tabBar.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.2)
-        tabBarController.viewControllers = [homeNC, scanNC, orderNC, giftNC, storeNC]
+        tabBarController.viewControllers = [homeVC, scanNC, orderNC, giftNC, storeNC]
 
         window?.rootViewController = tabBarController
         
