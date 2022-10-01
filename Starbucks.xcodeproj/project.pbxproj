@@ -10,6 +10,7 @@
 		FF56F63028E64AA7003F2DDB /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56F62F28E64AA7003F2DDB /* Factories.swift */; };
 		FF56F63428E6735D003F2DDB /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56F63328E6735D003F2DDB /* HomeHeaderView.swift */; };
 		FF56F63628E67C48003F2DDB /* StarBucksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56F63528E67C48003F2DDB /* StarBucksViewController.swift */; };
+		FF56F63828E7EB10003F2DDB /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56F63728E7EB10003F2DDB /* TileView.swift */; };
 		FF70C98528E6059300B776D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70C98428E6059300B776D5 /* AppDelegate.swift */; };
 		FF70C98728E6059300B776D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70C98628E6059300B776D5 /* SceneDelegate.swift */; };
 		FF70C98E28E6059400B776D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF70C98D28E6059400B776D5 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		FF56F62F28E64AA7003F2DDB /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		FF56F63328E6735D003F2DDB /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		FF56F63528E67C48003F2DDB /* StarBucksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarBucksViewController.swift; sourceTree = "<group>"; };
+		FF56F63728E7EB10003F2DDB /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		FF70C98128E6059300B776D5 /* Starbucks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starbucks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF70C98428E6059300B776D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF70C98628E6059300B776D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				FF56F63528E67C48003F2DDB /* StarBucksViewController.swift */,
 				FF70C99828E6067C00B776D5 /* HomeViewController.swift */,
 				FF56F63328E6735D003F2DDB /* HomeHeaderView.swift */,
+				FF56F63728E7EB10003F2DDB /* TileView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF70C98528E6059300B776D5 /* AppDelegate.swift in Sources */,
+				FF56F63828E7EB10003F2DDB /* TileView.swift in Sources */,
 				FF56F63428E6735D003F2DDB /* HomeHeaderView.swift in Sources */,
 				FF70C98728E6059300B776D5 /* SceneDelegate.swift in Sources */,
 				FF56F63028E64AA7003F2DDB /* Factories.swift in Sources */,
