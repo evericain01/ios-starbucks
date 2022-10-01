@@ -24,33 +24,18 @@ class HomeViewController: StarBucksViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupNavBar()
         setTabBarImage(imageName: "house.fill", title: "Home")
         setupTableView()
         style()
         layout()
     }
-    
-    // MARK: - Navigation Bar
-//    func setupNavBar() {
-//
-//        // Use "bar appearance" to customize nav bar
-//        let barAppearance = UINavigationBarAppearance()
-//        barAppearance.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.2)
-//
-//        navigationItem.standardAppearance = barAppearance
-//        navigationItem.scrollEdgeAppearance = barAppearance
-//
-//        navigationController?.navigationBar.topItem?.title = "Good afternoon! ☀️"
-//    }
-
 }
 
 extension HomeViewController {
     // MARK: - Style
     func style() {
         headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.backgroundColor = .systemPink
+        headerView.backgroundColor = .lightGray
         tableView.translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -66,7 +51,7 @@ extension HomeViewController {
             headerViewTopConstraint!,
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
+
             tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),

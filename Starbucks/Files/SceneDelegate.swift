@@ -38,6 +38,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window?.rootViewController = tabBarController
         
+        // Changing the colours of the icons on the tab bar
+        tabBarController.tabBar.tintColor = .lightGreen
+        tabBarController.tabBar.isTranslucent = false
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

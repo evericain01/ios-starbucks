@@ -11,7 +11,7 @@ import UIKit
 class HomeHeaderView: UIView {
     
     let greeting = UILabel()
-    let inboxButton = UIButton()
+    var inboxButton = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -31,13 +31,11 @@ extension HomeHeaderView {
     func style() {
         greeting.translatesAutoresizingMaskIntoConstraints = false
         greeting.font = UIFont.preferredFont(forTextStyle: .largeTitle)
-        greeting.text = "Good afternoon, Ebra!"
+        greeting.text = "Good afternoon, Kai!"
         greeting.numberOfLines = 0
         greeting.lineBreakMode = .byWordWrapping
         
-        inboxButton.translatesAutoresizingMaskIntoConstraints = false
-        inboxButton.setTitleColor(.label, for: .normal)
-        inboxButton.setTitle("Inbox", for: .normal)
+        makeInboxButton()
     }
     
     // MARK: - Layout
@@ -50,11 +48,29 @@ extension HomeHeaderView {
             greeting.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             greeting.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             
-            inboxButton.topAnchor.constraint(equalTo: greeting.bottomAnchor, constant: 5),
-            inboxButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            inboxButton.topAnchor.constraint(equalTo: greeting.bottomAnchor, constant: 10),
+            inboxButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             inboxButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            inboxButton.widthAnchor.constraint(equalToConstant: 100)
+
         ])
     }
-    
-    
 }
+
+// MARK: - Factories
+extension HomeHeaderView {
+
+    // Setting up the button
+    func makeInboxButton() {
+        inboxButton.translatesAutoresizingMaskIntoConstraints = false
+        let configuration = UIImage.SymbolConfiguration(scale: .large)
+        let image = UIImage(systemName: "envelope", withConfiguration: configuration)
+        
+        inboxButton.setImage(image, for: .normal)
+        inboxButton.setTitle("Inbox", for: .normal)
+        inboxButton.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.3)
+        inboxButton.frame = CGRect(x: 100, y: 100, width: 200, height: 50)
+        inboxButton.layer.cornerRadius = 5.5
+    }
+}
+
