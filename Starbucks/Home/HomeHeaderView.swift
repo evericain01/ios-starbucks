@@ -49,9 +49,9 @@ extension HomeHeaderView {
             greeting.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             
             inboxButton.topAnchor.constraint(equalTo: greeting.bottomAnchor, constant: 10),
-            inboxButton.leadingAnchor.constraint(equalTo: leadingAnchor),
+            inboxButton.leadingAnchor.constraint(equalTo: greeting.leadingAnchor),
             inboxButton.bottomAnchor.constraint(equalTo: bottomAnchor),
-            inboxButton.widthAnchor.constraint(equalToConstant: 100)
+            inboxButton.widthAnchor.constraint(equalToConstant: 85)
 
         ])
     }
