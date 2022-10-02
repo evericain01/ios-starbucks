@@ -32,12 +32,11 @@ class TileView: UIViewController {
         view.addSubview(label)
         
         NSLayoutConstraint.activate([
-            
             // This center's the label horizontally and vertically
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            label.heightAnchor.constraint(equalToConstant: 300)
-//            view.heightAnchor.constraint(equalToConstant: 300)
+            // Setting the height of this tile view
+            view.heightAnchor.constraint(equalToConstant: 300)
             
         ])
     }
