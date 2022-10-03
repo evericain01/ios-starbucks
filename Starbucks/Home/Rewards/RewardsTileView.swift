@@ -15,6 +15,9 @@ class RewardsTileView: UIView {
     let starRewardsView = StarRewardsView()
     var detailsButton = UIButton()
     
+    var heightConstraint: NSLayoutConstraint?
+    
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         style()
@@ -75,6 +78,9 @@ extension RewardsTileView {
         addSubview(starRewardsView)
         addSubview(detailsButton)
         
+        // Setting the height of
+        heightConstraint = starRewardsView.heightAnchor.constraint(equalToConstant: 0)
+        
         NSLayoutConstraint.activate([
             balanceView.topAnchor.constraint(equalTo: topAnchor),
             balanceView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
@@ -92,12 +98,16 @@ extension RewardsTileView {
             starRewardsView.topAnchor.constraint(equalTo: rewardsGraphsView.bottomAnchor, constant: 5),
             starRewardsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 2),
             starRewardsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 2),
+            heightConstraint!,
 
             detailsButton.topAnchor.constraint(equalTo: starRewardsView.bottomAnchor, constant: 8),
             detailsButton.leadingAnchor.constraint(equalTo: balanceView.leadingAnchor, constant: 5),
             detailsButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 2)
         
         ])
+        
+        // Making the star rewards view hidden
+        starRewardsView.isHidden = true
     }
     
     // Redraw out graph once we know our actual device width & height
@@ -109,3 +119,61 @@ extension RewardsTileView {
         
     }
 }
+
+// MARK: - Actions
+extension RewardsTileView {
+    @objc func rewardOptionsTapped() {
+        
+        if heightConstraint?.constant == 0 {
+            // When it's not collapsed
+            self.setChevronUp()
+            
+            let heightAnimator = UIViewPropertyAnimator(duration: 0.75, curve: .easeInOut) {
+                self.heightConstraint?.constant = 270
+                self.layoutIfNeeded()
+            }
+            
+            heightAnimator.startAnimation()
+            
+            // Changing the alpha of the star rewards view 
+            let alphaAnimator = UIViewPropertyAnimator(duration: 0.25, curve: .easeInOut) {
+                self.starRewardsView.isHidden = false
+                self.starRewardsView.alpha = 1
+            }
+            
+            alphaAnimator.startAnimation(afterDelay: 0.5)
+        } else {
+            // When it's collapsed
+            self.setChevronDown()
+            
+            let animator = UIViewPropertyAnimator(duration: 0.75, curve: .easeInOut) {
+                self.heightConstraint?.constant = 0
+                self.starRewardsView.isHidden = true
+                self.starRewardsView.alpha = 0
+                self.layoutIfNeeded()
+            }
+            animator.startAnimation()
+        }
+    }
+    
+    @objc func detailsButtonTapped() {
+        print("Details tapped!!!")
+    }
+    
+    // Function that sets the chevron up image
+    private func setChevronUp() {
+        let configuration = UIImage.SymbolConfiguration(scale: .small)
+        let image = UIImage(systemName: "chevron.up", withConfiguration: configuration)
+        rewardsButton.setImage(image, for: .normal)
+    }
+    
+    // Function that sets the chevron down image
+    private func setChevronDown() {
+        let configuration = UIImage.SymbolConfiguration(scale: .small)
+        let image = UIImage(systemName: "chevron.down", withConfiguration: configuration)
+        rewardsButton.setImage(image, for: .normal)
+    }
+    
+    
+}
+
