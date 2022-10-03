@@ -53,12 +53,22 @@ func makeClearButton(withText text: String) -> UIButton {
     button.translatesAutoresizingMaskIntoConstraints = false
     button.setTitle(text, for: .normal)
     button.titleLabel?.adjustsFontSizeToFitWidth = true
+    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
 //    button.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     button.layer.cornerRadius = 10
     button.layer.borderWidth = 0.7
     button.setTitleColor(.label, for: .normal)
     button.layer.borderColor = UIColor.label.cgColor
     button.backgroundColor = .systemBackground
+
     
     return button
+}
+
+// To allow a higher priority cap for hugging priority 
+public extension NSLayoutConstraint {
+    @objc func setActiveBreakable(priority: UILayoutPriority = UILayoutPriority(900)) {
+        self.priority = priority
+        isActive = true
+    }
 }

@@ -12,7 +12,7 @@ class RewardsTileView: UIView {
     let balanceView = BalanceView()
     var rewardsButton = UIButton()
     let rewardsGraphsView = RewardsGraphView()
-    let starRewardsView = UIView()
+    let starRewardsView = StarRewardsView()
     var detailsButton = UIButton()
     
     override init(frame: CGRect) {
@@ -41,14 +41,13 @@ extension RewardsTileView {
         
         makeRewardsOptionButton()
         
-        detailsButton = makeClearButton(withText: "Details")
-        
+        detailsButton = makeClearButton(withText: "Details")        
     }
     
     // MARK: - Rewards Button
     func makeRewardsOptionButton() {
         rewardsButton.translatesAutoresizingMaskIntoConstraints = false
-//        rewardsButton.addTarget(self, action: #selector(rewardOptionsTapped), for: .primaryActionTriggered)
+        rewardsButton.addTarget(self, action: #selector(rewardOptionsTapped), for: .primaryActionTriggered)
         
         let configuration = UIImage.SymbolConfiguration(scale: .small)
         let image = UIImage(systemName: "chevron.down", withConfiguration: configuration)
@@ -64,6 +63,8 @@ extension RewardsTileView {
         rewardsButton.semanticContentAttribute = .forceRightToLeft
 //        rewardsButton.imageEdgeInsets = UIEdgeInsets(top: 2, left: 20, bottom: 0, right: 0)
 //        rewardsButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
+        
+
     }
     
     // MARK: - Layout
@@ -92,7 +93,7 @@ extension RewardsTileView {
             starRewardsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 2),
             starRewardsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 2),
 
-            detailsButton.topAnchor.constraint(equalTo: starRewardsView.bottomAnchor, constant: 2),
+            detailsButton.topAnchor.constraint(equalTo: starRewardsView.bottomAnchor, constant: 8),
             detailsButton.leadingAnchor.constraint(equalTo: balanceView.leadingAnchor, constant: 5),
             detailsButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 2)
         
