@@ -7,11 +7,11 @@
 
 import UIKit
 
-class RewardTileView: UIView {
+class RewardsTileView: UIView {
     
     let balanceView = BalanceView()
     var rewardsButton = UIButton()
-    let rewardsGraphsView = UIView()
+    let rewardsGraphsView = RewardsGraphView()
     let starRewardsView = UIView()
     var detailsButton = UIButton()
     
@@ -31,7 +31,7 @@ class RewardTileView: UIView {
     }
 }
 
-extension RewardTileView {
+extension RewardsTileView {
     
     // MARK: - Style
     func style() {
@@ -40,8 +40,6 @@ extension RewardTileView {
         starRewardsView.translatesAutoresizingMaskIntoConstraints = false
         
         makeRewardsOptionButton()
-        
-        rewardsGraphsView.backgroundColor = .systemRed
         
         detailsButton = makeClearButton(withText: "Details")
         
@@ -83,13 +81,12 @@ extension RewardTileView {
             rewardsButton.centerYAnchor.constraint(equalTo: balanceView.pointsLabel.centerYAnchor),
             rewardsButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -7),
 
-            rewardsGraphsView.topAnchor.constraint(equalTo: balanceView.bottomAnchor, constant: 2),
+            rewardsGraphsView.topAnchor.constraint(equalTo: balanceView.bottomAnchor, constant: 5),
             rewardsGraphsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             rewardsGraphsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            rewardsGraphsView.heightAnchor.constraint(equalToConstant: 100),
+//            rewardsGraphsView.heightAnchor.constraint(equalToConstant: 100),
 //            rewardsGraphsView.centerXAnchor.constraint(equalTo: centerXAnchor),
 //            rewardsGraphsView.widthAnchor.constraint(equalToConstant: frame.width),
-
 
             starRewardsView.topAnchor.constraint(equalTo: rewardsGraphsView.bottomAnchor, constant: 5),
             starRewardsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 2),
@@ -100,5 +97,14 @@ extension RewardTileView {
             detailsButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 2)
         
         ])
+    }
+    
+    // Redraw out graph once we know our actual device width & height
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        rewardsGraphsView.actualFrameWidth = frame.width
+        rewardsGraphsView.drawRewardsGraph()
+        
     }
 }

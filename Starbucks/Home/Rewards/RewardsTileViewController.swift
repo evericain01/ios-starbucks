@@ -7,10 +7,10 @@
 
 import UIKit
 
-class RewardTileViewController: UIViewController {
+class RewardsTileViewController: UIViewController {
     
     // Creating a Reward Tile view object
-    let rewardsTileView = RewardTileView()
+    let rewardsTileView = RewardsTileView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
