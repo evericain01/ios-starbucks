@@ -20,6 +20,7 @@
 		FF56F64928EA8429003F2DDB /* StarAndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56F64828EA8429003F2DDB /* StarAndPoints.swift */; };
 		FF56F64B28EB2147003F2DDB /* StarRewardsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56F64A28EB2147003F2DDB /* StarRewardsRow.swift */; };
 		FF56F64D28EB2ABA003F2DDB /* StarRewardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56F64C28EB2ABA003F2DDB /* StarRewardsView.swift */; };
+		FF56F64F28EB739E003F2DDB /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56F64E28EB739E003F2DDB /* HistoryService.swift */; };
 		FF70C98528E6059300B776D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70C98428E6059300B776D5 /* AppDelegate.swift */; };
 		FF70C98728E6059300B776D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70C98628E6059300B776D5 /* SceneDelegate.swift */; };
 		FF70C98E28E6059400B776D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF70C98D28E6059400B776D5 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		FF56F64828EA8429003F2DDB /* StarAndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarAndPoints.swift; sourceTree = "<group>"; };
 		FF56F64A28EB2147003F2DDB /* StarRewardsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardsRow.swift; sourceTree = "<group>"; };
 		FF56F64C28EB2ABA003F2DDB /* StarRewardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRewardsView.swift; sourceTree = "<group>"; };
+		FF56F64E28EB739E003F2DDB /* HistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
 		FF70C98128E6059300B776D5 /* Starbucks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starbucks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF70C98428E6059300B776D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF70C98628E6059300B776D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				FF56F63228E672CF003F2DDB /* Home */,
 				FF56F63128E672C6003F2DDB /* Files */,
 				FF70C99228E6059400B776D5 /* Info.plist */,
+				FF56F64E28EB739E003F2DDB /* HistoryService.swift */,
 			);
 			path = Starbucks;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				FF56F63C28E9F592003F2DDB /* TileView.swift in Sources */,
 				FF56F63F28EA30CD003F2DDB /* RewardsTileViewController.swift in Sources */,
 				FF56F64928EA8429003F2DDB /* StarAndPoints.swift in Sources */,
+				FF56F64F28EB739E003F2DDB /* HistoryService.swift in Sources */,
 				FF70C98728E6059300B776D5 /* SceneDelegate.swift in Sources */,
 				FF56F63028E64AA7003F2DDB /* Factories.swift in Sources */,
 				FF70C99928E6067C00B776D5 /* HomeViewController.swift in Sources */,
